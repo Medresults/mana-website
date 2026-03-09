@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANA Regenerative Biotech - Advanced Medical Device Manufacturer</title>
+    <meta name="description" content="MANA Regenerative Biotech - Advanced Medical Device Manufacturer & Regenerative Biotech Innovation">
+    <meta name="theme-color" content="#B4483C">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;600&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Prompt', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-size: 200px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(166, 166, 166, 0.2);
+            z-index: 50;
+            padding: 20px 24px;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-size: 24px;
+            font-weight: 600;
+            color: #B4483C;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 48px;
+        }
+        
+        .nav-link {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #B4483C;
+        }
+        
+        .cta-button {
+            background: #B4483C;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            border: none;
+            font-weight: 600;
+            letter-spacing: 0.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Prompt', 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            background: #333333;
+            transform: translateX(4px);
+        }
+        
+        /* Hero Section */
+        #hero {
+            margin-top: 80px;
+            padding: 80px 24px;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+        
+        .hero-tagline {
+            color: #B4483C;
+            font-weight: 200;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .secondary-button {
+            background: transparent;
+            border: 1px solid #B4483C;
+            color: #B4483C;
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Prompt', 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 12px;
+        }
+        
+        .secondary-button:hover {
+            background: #B4483C;
+            color: #ffffff;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(166, 166, 166, 0.2);
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 600;
+            color: #B4483C;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-visual {
+            height: 500px;
+            background: linear-gradient(135deg, #B4483C 0%, #333333 50%, #1a1a1a 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+        }
+        
+        .hero-visual-text {
+            text-align: center;
+        }
+        
+        .hero-visual-text h2 {
+            font-size: 3.5rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Products Section */
+        #products {
+            padding: 96px 24px;
+            background: linear-gradient(to bottom, #1a1a1a, rgba(51, 51, 51, 0.1));
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-tagline {
+            color: #B4483C;
+            font-weight: 200;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 32px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 64px;
+        }
+        
+        .filter-tab {
+            padding: 8px 24px;
+            border: 1px solid rgba(166, 166, 166, 0.4);
+            background: transparent;
+            color: #a6a6a6;
+            border-radius: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Prompt', 'Space Grotesk', sans-serif;
+            font-weight: 400;
+        }
+        
+        .filter-tab.active {
+            background: #B4483C;
+            color: #ffffff;
+            border-color: #B4483C;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .product-card {
+            background: transparent;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .product-image {
+            height: 192px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border: 1px solid rgba(166, 166, 166, 0.4);
+            border-radius: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-category {
+            color: #B4483C;
+            font-weight: 300;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 8px;
+        }
+        
+        .product-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .product-tagline {
+            font-size: 13px;
+            color: #999999;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        
+        .product-description {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .spec-tag {
+            font-size: 11px;
+            background: rgba(166, 166, 166, 0.15);
+            border: 1px solid rgba(166, 166, 166, 0.3);
+            padding: 4px 12px;
+            border-radius: 4px;
+            color: #cccccc;
+        }
+        
+        .product-roi {
+            color: #B4483C;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .product-learn-more {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(180, 72, 60, 0.5);
+            background: transparent;
+            color: #a6a6a6;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Prompt', 'Space Grotesk', sans-serif;
+        }
+        
+        .product-learn-more:hover {
+            border-color: #B4483C;
+            color: #B4483C;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(166, 166, 166, 0.2);
+            padding: 48px 24px;
+            margin-top: 96px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-section h4 {
+            color: #B4483C;
+            font-weight: 300;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #999999;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #B4483C;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(166, 166, 166, 0.2);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #666666;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-visual {
+                height: 300px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-brand">MANA</div>
+            <div class="nav-links">
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#why" class="nav-link">Why MANA</a>
+            </div>
+            <button class="cta-button">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="grain">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-tagline">Advanced Medical Device Manufacturer & Regenerative Biotech Innovation</p>
+                    <h1>Regenerative Excellence</h1>
+                    <p>MANA's integrated ecosystem of regenerative biotech solutions—from body sculpting to intimate wellness, diagnostic tools to advanced laser systems—designed for forward-thinking clinics and aesthetic practices.</p>
+                    <div class="hero-buttons">
+                        <button class="cta-button">Request Demo →</button>
+                        <button class="secondary-button">View Products</button>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Device Lines</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">$7M</div>
+                            <div class="stat-label">2026 Target</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Active Partners</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-visual-text">
+                        <h2>MANA</h2>
+                        <p style="color: rgba(180, 72, 60, 0.5);">Regenerative Biotech</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="grain">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tagline">Device Portfolio</p>
+                <h2>Premium Solutions</h2>
+                <p>MANA's engineered medical device ecosystem — from innovative body sculpting to intimate wellness solutions, diagnostic tools to advanced laser systems</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active">All</button>
+                <button class="filter-tab">Body</button>
+                <button class="filter-tab">Intimate</button>
+                <button class="filter-tab">Skincare</button>
+                <button class="filter-tab">Diagnostics</button>
+                <button class="filter-tab">Plasma</button>
+                <button class="filter-tab">Consumables</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: MANAsculpt -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Body</p>
+                    <h3 class="product-name">MANAsculpt</h3>
+                    <p class="product-tagline">Synchronized RF + HIFEM</p>
+                    <p class="product-description">Electromagnetic muscle stimulation combined with radiofrequency for accelerated body contouring and muscle toning</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">RF Technology</span>
+                        <span class="spec-tag">HIFEM</span>
+                        <span class="spec-tag">Body Contouring</span>
+                    </div>
+                    <p class="product-roi">ROI: 6-12 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 2: MANAsculpt X1 -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Body</p>
+                    <h3 class="product-name">MANAsculpt X1</h3>
+                    <p class="product-tagline">Advanced Body Contouring</p>
+                    <p class="product-description">Next-generation synchronized technology for premium body sculpting and aesthetic transformation</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">Advanced RF</span>
+                        <span class="spec-tag">Precision HIFEM</span>
+                        <span class="spec-tag">Premium Contouring</span>
+                    </div>
+                    <p class="product-roi">ROI: 6-12 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 3: MANAintima -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Intimate</p>
+                    <h3 class="product-name">MANAintima</h3>
+                    <p class="product-tagline">Intimate Wellness</p>
+                    <p class="product-description">Specialized system for intimate area rejuvenation and women's wellness treatments</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">RF Technology</span>
+                        <span class="spec-tag">Intimate Care</span>
+                        <span class="spec-tag">Non-Invasive</span>
+                    </div>
+                    <p class="product-roi">ROI: 8-14 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 4: MANA airlux MD -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Skincare</p>
+                    <h3 class="product-name">MANA airlux MD</h3>
+                    <p class="product-tagline">Pneumatic Delivery System</p>
+                    <p class="product-description">Advanced air pressure technology for superior product delivery and skin penetration</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">Air Pressure Tech</span>
+                        <span class="spec-tag">Deep Penetration</span>
+                        <span class="spec-tag">Enhanced Results</span>
+                    </div>
+                    <p class="product-roi">ROI: 5-10 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 5: MANAscan -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Diagnostics</p>
+                    <h3 class="product-name">MANAscan</h3>
+                    <p class="product-tagline">AI-Powered Skin Analysis</p>
+                    <p class="product-description">Advanced diagnostic tool for comprehensive skin analysis and personalized treatment planning</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">AI Analysis</span>
+                        <span class="spec-tag">Skin Mapping</span>
+                        <span class="spec-tag">Treatment Planning</span>
+                    </div>
+                    <p class="product-roi">ROI: Clinical Tool</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 6: MANAlase -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Skincare</p>
+                    <h3 class="product-name">MANAlase</h3>
+                    <p class="product-tagline">Laser Hair Removal & Skin</p>
+                    <p class="product-description">Multi-purpose laser system for hair removal, skin rejuvenation, and aesthetic correction</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">Diode Laser</span>
+                        <span class="spec-tag">Hair Removal</span>
+                        <span class="spec-tag">Multi-Purpose</span>
+                    </div>
+                    <p class="product-roi">ROI: 4-8 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 7: MANAplex -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Plasma</p>
+                    <h3 class="product-name">MANAplex</h3>
+                    <p class="product-tagline">Plasma Technology</p>
+                    <p class="product-description">Advanced plasma sublimation system for precision skin treatments and non-invasive rejuvenation</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">Plasma Tech</span>
+                        <span class="spec-tag">Precision Ablation</span>
+                        <span class="spec-tag">Zero Downtime</span>
+                    </div>
+                    <p class="product-roi">ROI: 4-8 months</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+
+                <!-- Product 8: ACT O'FEEL -->
+                <div class="product-card">
+                    <div class="product-image"></div>
+                    <p class="product-category">Consumables</p>
+                    <h3 class="product-name">ACT O'FEEL</h3>
+                    <p class="product-tagline">Bio-Regenerative Serum</p>
+                    <p class="product-description">Premium consumable for enhanced treatment outcomes and superior client retention</p>
+                    <div class="product-specs">
+                        <span class="spec-tag">Bio-Regenerative</span>
+                        <span class="spec-tag">Clinical Grade</span>
+                        <span class="spec-tag">High Margins</span>
+                    </div>
+                    <p class="product-roi">ROI: Ongoing Revenue</p>
+                    <button class="product-learn-more">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">MANAsculpt</a></li>
+                        <li><a href="#">MANAlase</a></li>
+                        <li><a href="#">MANAplex</a></li>
+                        <li><a href="#">MANAscan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Package Plans</a></li>
+                        <li><a href="#">Financing</a></li>
+                        <li><a href="#">Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MANA Regenerative Biotech. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
